@@ -1,4 +1,4 @@
-## Hi there 👋
+[![An image of @punvas's Holopin badges, which is a link to view their full Holopin profile](https://holopin.me/punvas)](https://holopin.io/@punvas)
 
 <!--
 **PunVas/PunVas** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
