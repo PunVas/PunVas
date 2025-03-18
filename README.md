@@ -25,7 +25,7 @@ _start:
     mov rax, 1          ; syscall: write
     mov rdi, 1          ; file descriptor: stdout
     mov rsi, life       ; pointer to string
-    mov rdx, 32         ; length of string
+    mov rdx, 34         ; length of string
     syscall             ; execute syscall
 
     ; Exit
