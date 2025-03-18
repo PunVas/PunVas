@@ -13,7 +13,7 @@
 ![](https://github-profile-trophy.vercel.app/?username=PunVas&theme=tokyonight&no-frame=false&no-bg=false&margin-w=4)
 
 
-
+```
 section .data
     life db "chai + college + coding + shinchan", 0
 
@@ -32,3 +32,4 @@ _start:
     mov rax, 60         ; syscall: exit
     xor rdi, rdi        ; status: 0
     syscall
+```
