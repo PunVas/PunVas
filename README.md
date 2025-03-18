@@ -11,3 +11,24 @@
 
 ## 🏆 GitHub Trophies
 ![](https://github-profile-trophy.vercel.app/?username=PunVas&theme=tokyonight&no-frame=false&no-bg=false&margin-w=4)
+
+
+
+section .data
+    life db "chai + college + coding + shinchan", 0
+
+section .text
+    global _start
+
+_start:
+    ; Print the meaning of life
+    mov rax, 1          ; syscall: write
+    mov rdi, 1          ; file descriptor: stdout
+    mov rsi, life       ; pointer to string
+    mov rdx, 32         ; length of string
+    syscall             ; execute syscall
+
+    ; Exit
+    mov rax, 60         ; syscall: exit
+    xor rdi, rdi        ; status: 0
+    syscall
