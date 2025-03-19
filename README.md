@@ -13,7 +13,7 @@
 ![](https://github-profile-trophy.vercel.app/?username=PunVas&theme=tokyonight&no-frame=false&no-bg=false&margin-w=4)
 
 
-```
+```asm
 section .data
     life db "chai + college + coding + shinchan", 0
 
