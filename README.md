@@ -22,14 +22,13 @@ section .text
 
 _start:
     ; Print the meaning of life
-    mov rax, 1          ; syscall: write
-    mov rdi, 1          ; file descriptor: stdout
-    mov rsi, life       ; pointer to string
-    mov rdx, 34         ; length of string
-    syscall             ; execute syscall
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, life
+    mov rdx, 34
+    syscall
 
-    ; Exit
-    mov rax, 60         ; syscall: exit
-    xor rdi, rdi        ; status: 0
+    mov rax, 60
+    xor rdi, rdi
     syscall
 ```
