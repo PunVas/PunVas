@@ -32,3 +32,57 @@ _start:
     xor rdi, rdi
     syscall
 ```
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Cookie XYZ</title>
+    <style>
+        /* CSS Rule: This will trigger a request to read_cookie.php when the #cookie-reader element is present */
+        /* Note: Using background-image is often less intrusive than 'content' for pseudo-elements if you don't need the content itself */
+        #cookie-reader {
+            /* This URL triggers the PHP script to read the cookie */
+            background-image: url('read_cookie.php?action=read-xyz');
+            /* Make the element invisible if you don't need it visible */
+            position: absolute;
+            left: -9999px;
+        }
+
+        /* Optional: Style an element to display the cookie value if needed */
+        .cookie-display {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Reading Cookie Example</h1>
+    <p>This page demonstrates reading a cookie named 'xyz' using CSS to trigger a PHP script.</p>
+
+    <!-- This hidden element triggers the CSS rule that fetches the PHP script -->
+    <div id="cookie-reader" aria-hidden="true"></div>
+
+    <!-- Optional: Element to display the cookie value, populated by the PHP script -->
+    <div class="cookie-display">
+        <strong>Cookie 'xyz' Value (as seen by PHP on load):</strong>
+        <?php
+        // This PHP block runs *once* when the main page loads,
+        // showing the value if it existed *at that moment*.
+        if (isset($_COOKIE['xyz'])) {
+            echo htmlspecialchars($_COOKIE['xyz']); // Use htmlspecialchars to prevent XSS
+        } else {
+            echo 'Cookie "xyz" not found or not set.';
+        }
+        ?>
+    </div>
+
+    <!-- Optional: Link to set the cookie for testing -->
+    <p><a href="read_cookie.php?action=set-xyz&value=test_value_<?php echo time(); ?>">Set Cookie 'xyz' to a test value</a> (This will trigger the PHP script directly)</p>
+
+</body>
+</html>
